@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Real-time Age Display</title>
+</head>
+<style>
+    .age {
+        text-align: center;
+        font-size: 150px;
+    }
+</style>
+<body>
+    <label for="birthdate">Enter your Birthday</label>
+    <input type="date" id="birthday" name="birthday">
+    <h1>Your Age:</h1>
+    <p class="age" id="age"></p>
+    <script>
+        function calculateAge(birthdate) {
+            const birth = new Date(birthdate);
+            const now = new Date();
+            const diff = now - birth;
+
+            // Calculate age in years with decimal places
+            const age = diff / (1000 * 60 * 60 * 24 * 365.25);
+            return age;
+        }
+
+        function updateAgeDisplay() {
+            const birthdate = document.getElementById('birthday').value; // Get the value of the input field
+            const age = calculateAge(birthdate).toFixed(9); // Display with 9 decimal places
+            document.getElementById('age').textContent = age + ' years';
+        }
+
+        // Update age every second
+        setInterval(updateAgeDisplay, 1000);
+    </script>
+</body>
+</html>
