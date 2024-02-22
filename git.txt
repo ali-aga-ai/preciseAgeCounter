@@ -12,7 +12,9 @@ hey, i am now learning git. ill be making some commits
 
 change a file = modified.....new file = untracked
 
-git add <filename> adds file to staging area after which u will have to commit using.....    git commit -m "some message"
+--git add <filename> adds file to staging area after which u will have to commit using.....    git commit -m "some message"
+
+--git push origin to push 
 
 ---------------------------------------------
 
@@ -138,13 +140,29 @@ Push a branch to a remote repository:
 To compare two branches
 --git diff <branch name>
 
+say some changes occur on the remote repo and u wanna pull them
+--git pull origin main
+-------------
+CONFLICTS
 
 
+Conflicts in Git arise when two or more contributors make changes to the same part of a file concurrently, 
+and Git cannot automatically merge the changes.
 
+Conflicts can occur during a git merge or git pull operation when combining changes from different branches. 
+Resolving conflicts locally is necessary before pushing changes to a remote repository using git push.
 
+-------------
+SOMETHING IMPORTANT
 
+git add . (with dot):
 
+Stages all changes in the current directory and its subdirectories.
+It stages new, modified, and deleted files.
+git add (without arguments):
 
+Stages all changes in the current directory.
+It stages new and modified files but does not stage deletions.
 
 
 
