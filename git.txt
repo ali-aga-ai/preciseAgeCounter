@@ -1,0 +1,150 @@
+hey, i am now learning git. ill be making some commits
+
+-git clone (github link) ->to clone
+- ls-a for all files including hidden files.......ls merely gets non hidden files
+
+-git status(As the name suggests)
+
+-untracked(new files that git doesnt track yet, say some file which u have never commited. say u create a new file from previous github repo)
+-modified(changed)
+-staged(ready to be commited)
+-unmodified
+
+change a file = modified.....new file = untracked
+
+git add <filename> adds file to staging area after which u will have to commit using.....    git commit -m "some message"
+
+---------------------------------------------
+
+What if i wanna create a new repo on git and github
+
+
+--u can initialise a git repository the process of setting up a new Git repository for a project.
+When you initialize a Git repository in a directory, Git starts tracking the changes in that directory, 
+allowing you to take advantage of version control features.  
+you can do this with   "git init"
+
+now what if i wanna put my local git repo to a remote repository?
+
+--"git remote add origin <link>" where link is repo where u wanna put
+
+how to know h
+
+-------------------------------------------------
+
+Why stage before commit, whats the use?
+--Staging lets you choose specific changes to include in a commit while leaving others out.
+  This is helpful when you've made multiple modifications and want to group them logically.
+
+--Review Changes Before Committing
+
+--Conflict Resolution: If there are conflicts during the merge process, staging allows you to resolve conflicts before the final commit. 
+  You can address conflicts for each file individually, ensuring a cleaner and more controlled commit.
+
+-------------------------------------------------
+
+How to pull files back from stage?
+-git reset
+-git reset file1.txt file2.cpp
+
+
+--------------------------------------------------
+
+What is the difference between push and commit?
+
+commit and push are two distinct commands in Git, each serving a different purpose:
+
+Commit:
+
+Command: git commit -m "Your commit message"
+Purpose: The commit command is used to save changes to your local repository. After making modifications to your files, 
+you use git add to stage the changes and then git commit to create a snapshot of those changes along with a commit message.
+Commits represent a point in the project's history, and they are stored locally.
+
+
+Push:
+
+Command: git push <remote-name> <branch-name>
+Purpose: The push command is used to update a remote repository with the commits you've made locally.
+After committing changes locally, you can use git push to send those commits to a shared or central repository. 
+This makes your changes available to others collaborating on the project.
+-----------------------
+
+how to know of remote repositories linked to my local file?
+
+input-->git remote -v
+output-->origin  https://github.com/your-username/your-repository.git (fetch)
+        origin  https://github.com/your-username/your-repository.git (push)
+
+
+where origin is the name of the remote repo
+
+----------------------------------------
+
+can i push directly after stage or do i need to commit first?
+
+Before pushing changes to a remote repository, you need to commit the changes that you have staged. 
+Committing creates a snapshot of the changes in your local repository, and only committed changes can be pushed to a remote repository.
+
+
+----------------------------------------
+
+BRANCHES
+
+Branches in Git allow you to diverge from the main development line to work on different features or fixes independently, 
+providing a way to isolate changes and merge them back when ready. They enable parallel development and maintain a clean and 
+organized version history
+
+ - git branch (to check branch)
+
+ -git branch -M main (this renames branch to main)
+
+ -git push origin main (this pushes our changes to main branch)
+
+ (NOTE: by default previous;y on git the default branch is 'master' but because of its negative conotations the github doesnt have a 'master' 
+ branch and was renamed to 'main', so if u wanna make changes to main better rename it to main first)
+
+ - git push -u origin main (say u wanna psuh againa and again to the same origin, u only need to write this the first time, the next time
+   onwards u may directly do "git push")
+
+----------------
+BRANCHES commands
+
+Create a new branch:
+-----git branch <branch-name>
+
+Switch to a branch:
+-----git checkout <branch-name>
+-----git switch <branch-name>
+
+Create and switch to a new branch:
+---git checkout -b <new-branch-name>
+---git switch -c <new-branch-name>
+
+List all branches:
+---git branch
+
+
+Merge changes from one branch into the current branch:
+---git merge <branch-name>
+
+Delete a branch (locally):[NOTE: say u wanna delete branch A. u cant do that while being in branch A. first switch to branch B, then delete]
+---git branch -d <branch-name>
+
+
+Push a branch to a remote repository:
+---git push origin <branch-name>
+
+To compare two branches
+--git diff <branch name>
+
+
+
+
+
+
+
+
+
+
+
